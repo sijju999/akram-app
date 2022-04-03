@@ -44,6 +44,14 @@ pipeline {
                 }
             }
         }
+          stage ('K8S Deploy') {
+
+                        kubernetesDeploy(
+                            configs: 'kubernetes/deployment.yaml ',
+                            kubeconfigId: 'K8S',
+                            enableConfigSubstitution: true
+                            )
+                }
         stage('deploy') {
             environment {
                 AWS_ACCESS_KEY_ID = credentials('jenkins_aws_access_key_id')
