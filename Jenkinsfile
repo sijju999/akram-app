@@ -4,11 +4,8 @@ pipeline {
     agent any
     tools {
         maven 'Maven'
-        dockerTool 'docker'
     }
     environment {
-        ECR_REPO_URL = '664574038682.dkr.ecr.eu-west-3.amazonaws.com'
-        IMAGE_REPO = "${ECR_REPO_URL}/java-maven-app"
         DOCKER_REPO_SERVER ='407377831699.dkr.ecr.us-east-1.amazonaws.com'
         DOCKER_REPO = "${DOCKER_REPO_SERVER}/java-maven-app"
     }
