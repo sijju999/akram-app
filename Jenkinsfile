@@ -4,6 +4,7 @@ pipeline {
     agent any
     tools {
         maven 'Maven'
+        docker 'docker'
     }
     environment {
         ECR_REPO_URL = '664574038682.dkr.ecr.eu-west-3.amazonaws.com'
